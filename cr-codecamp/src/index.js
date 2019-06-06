@@ -1,12 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import "bootstrap/dist/css/bootstrap.min.css";
+import './css/codecamp.css';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+// Component imports
+import Sidebar from "./components/sidebar";
+import Header from "./components/header";
+import AboutSection from "./components/about";
+import CourseSections from "./components/activities";
+import FormPage from "./components/contact"
+import NameForm from './components/contact';
+
+
+
+
+class App extends React.Component {
+    render(){
+        return(
+         <div>
+            <Sidebar />
+            <Header />
+            <AboutSection />
+            <CourseSections />
+            <NameForm />
+         </div>
+        )
+    }
+}
+
+
+
+
+
+const rootElem = document.getElementById('root')
+
+ReactDOM.render(<App />, rootElem);
+
